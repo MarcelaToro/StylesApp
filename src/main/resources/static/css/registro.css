@@ -1,0 +1,123 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo de la página */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../images/fondo_registro.jpg');
+    background-size: cover;
+    color: #333;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Mensaje de bienvenida */
+body::before {
+    content: "¡Bienvenido! Regístrate para vivir la mejor experiencia";
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 24px;
+    color: #ffffff;
+    max-width: 300px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    animation: slideIn 1.5s ease-in-out forwards;
+    z-index: 1;
+}
+
+/* Contenedor del formulario */
+form {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+    z-index: 2;
+    position: relative;
+}
+
+h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Estilos de entrada */
+label {
+    display: block;
+    font-size: 14px;
+    color: #444;
+    margin-top: 15px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #8d77ff;
+    outline: none;
+}
+
+/* Botón de enviar */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #91300D;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #91300D;
+    transform: translateY(-3px);
+}
+
+button[type="submit"]:active {
+    background-color: #5a49b7;
+    transform: translateY(1px);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
